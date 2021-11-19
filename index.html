@@ -5,9 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="index.js" defer="defer"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Take notes here</h1>
+
+        <div class="input">
+            <div class="title--input">
+                <label for='title'>Title:</label>
+                <input type='text' id='title' name='title' class='Title'></input>
+            </div>
+            <div class="text-area--input">
+                <label for='text'>Text:</label>
+                <textarea id='text' name='text' class='text' rows='13' columns='40'></textarea>
+            </div>
+            
+            <div class="button-area--input">
+                <div class='clear--button-area'>
+                    <input class='clear-btn' id='clear-btn' type='button' value='clear'>                            
+                </div>                        
+                <div class='add--button-area'>                        
+                    <input class='add-btn' id='add-btn' type='button' value='add'>                            
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card" id='card-holder'>
+            
+        </div>
+
+
+    </div>
 </body>
 </html>
