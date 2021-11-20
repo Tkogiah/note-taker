@@ -47,16 +47,39 @@ function makeCards(array) {
         openButton.value = 'open'
         cardDiv.appendChild(cardTitle)
         cardDiv.appendChild(openButton)
-        addOpen(openButton)
+        openButton.addEventListener('click', function() {
+            let modalDiv = document.createElement('div')
+            modalDiv.classList.add('modal')
+            document.body.appendChild(modalDiv)
+            
+            let modalHeader = document.createElement('div')
+            modalHeader.classList.add('header--modal')
+            let modalBody = document.createElement('div')
+            modalBody.classList.add('body--modal')
+            modalBody.innerText = element.text
+            modalDiv.appendChild(modalHeader)
+            modalDiv.appendChild(modalBody)
+
+            let modalHeaderTitle = document.createElement('div')
+            modalHeaderTitle.classList.add('title--header--modal')
+            modalHeaderTitle.innerText = element.title
+            let modalHeaderButton = document.createElement('button')
+            modalHeaderButton.classList.add('close-button--header--modal')
+            modalHeaderButton.innerHTML = '&times;'
+            modalHeader.appendChild(modalHeaderTitle)
+            modalHeader.appendChild(modalHeaderButton)
+            
+            let overlay = document.createElement('div')
+            overlay.id = overlay
+
+        })
     });
 }
 
-function addOpen(button) {
-    button.addEventListener('click', function() {
-
-    })
+function addOpen(button, array) {
+    button
 }
 
 function makeModal() {
-    
+
 }

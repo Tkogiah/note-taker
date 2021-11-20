@@ -72,3 +72,39 @@ h1 {
     text-align: center;
 }
 
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 60vw;
+    height: 60vh;
+
+}
+
+.header--modal {
+    padding: 1vh 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+.title--header--modal {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+.close-button--header--modal {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.body--modal {
+    padding: 1vh 1vw;
+}
