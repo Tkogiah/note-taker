@@ -26,7 +26,7 @@ h1 {
 .input {
     border: 1px solid black;
     width: 80%;
-    height: 55%;
+    height: 40%;
     margin: 1%;
 }
 .title--input {
@@ -36,6 +36,11 @@ h1 {
     display: flex;
     flex-direction: column;
     margin: 1%;
+}
+.text {
+    width: 100%;
+    height: 100%; 
+    box-sizing: border-box;
 }
 
 .button-area--input {
@@ -50,10 +55,8 @@ h1 {
     margin: 1%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
     overflow: scroll;
-     overflow-x: hidden; 
+    overflow-x: hidden; 
 }
 .cards {
     width: 32%;
@@ -62,12 +65,19 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-       
+    justify-content: center;       
 }
-.hidden {
-    display: ;
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+
 }
+.unique-card {
+    width: 25%;
+}
+
+
 .unique-card {
     text-align: center;
 }
@@ -107,4 +117,12 @@ h1 {
 }
 .body--modal {
     padding: 1vh 1vw;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .5);
 }

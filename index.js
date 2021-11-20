@@ -14,6 +14,8 @@ const activeTitle = document.getElementById('title')
 const activeText = document.getElementById('text')
 const clearButton = document.getElementById('clear-btn')
 const addButton = document.getElementById('add-btn')
+activeTitle.value = ''
+activeText.value = ''
 
 clearButton.addEventListener('click', function() {
     activeTitle.value = ''
@@ -24,6 +26,8 @@ addButton.addEventListener('click', function() {
     if(!activeText.value || !activeTitle.value) return;
     cardArray.push(primaryObject(activeTitle.value, activeText.value))
     makeCards(cardArray)
+    activeTitle.value = ''
+    activeText.value = ''
 })
 
 function removeAllChildNodes(parent) {
@@ -37,7 +41,7 @@ function makeCards(array) {
         element.id = i + 1
         let cardDiv = document.createElement('div')
         cardDiv.classList.add('cards')
-        cardDiv.id = i+1
+        cardDiv.id = i
         cardHolder.appendChild(cardDiv);
         let cardTitle = document.createElement('h3')
         cardTitle.innerText = element.title
@@ -45,18 +49,19 @@ function makeCards(array) {
         buttonsDiv.classList.add('buttons')
         let openButton = document.createElement('input')
         openButton.classList.add('unique-card')
-        openButton.id = `open-${i+1}`
+        openButton.id = `open-${i}`
         openButton.value = 'open'
         let deleteButton = document.createElement('input')
         deleteButton.classList.add('unique-card')
-        deleteButton.id = `open-${i+1}`
+        deleteButton.id = `delete-${i}`
         deleteButton.value = 'delete'
         cardDiv.appendChild(cardTitle)
         cardDiv.appendChild(buttonsDiv)
         buttonsDiv.appendChild(deleteButton)
         buttonsDiv.appendChild(openButton)
         deleteButton.addEventListener('click', function() {
-            deleteButton.parent
+            cardDiv.remove()
+            cardArray.splice(i, 1)
         })
         openButton.addEventListener('click', function() {
             let modalDiv = document.createElement('div')
@@ -98,5 +103,9 @@ function addOpen(button, array) {
 }
 
 function makeModal() {
+
+}
+
+function deleteItem(event){
 
 }
