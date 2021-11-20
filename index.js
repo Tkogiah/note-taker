@@ -41,12 +41,23 @@ function makeCards(array) {
         cardHolder.appendChild(cardDiv);
         let cardTitle = document.createElement('h3')
         cardTitle.innerText = element.title
+        let buttonsDiv = document.createElement('div')
+        buttonsDiv.classList.add('buttons')
         let openButton = document.createElement('input')
         openButton.classList.add('unique-card')
         openButton.id = `open-${i+1}`
         openButton.value = 'open'
+        let deleteButton = document.createElement('input')
+        deleteButton.classList.add('unique-card')
+        deleteButton.id = `open-${i+1}`
+        deleteButton.value = 'delete'
         cardDiv.appendChild(cardTitle)
-        cardDiv.appendChild(openButton)
+        cardDiv.appendChild(buttonsDiv)
+        buttonsDiv.appendChild(deleteButton)
+        buttonsDiv.appendChild(openButton)
+        deleteButton.addEventListener('click', function() {
+            deleteButton.parent
+        })
         openButton.addEventListener('click', function() {
             let modalDiv = document.createElement('div')
             modalDiv.classList.add('modal')
@@ -70,7 +81,13 @@ function makeCards(array) {
             modalHeader.appendChild(modalHeaderButton)
             
             let overlay = document.createElement('div')
-            overlay.id = overlay
+            overlay.classList.add('overlay')
+            document.body.appendChild(overlay)
+
+            modalHeaderButton.addEventListener('click', function() {
+                document.body.removeChild(overlay)
+                document.body.removeChild(modalDiv)
+            })
 
         })
     });
