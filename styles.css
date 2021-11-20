@@ -19,6 +19,9 @@ body {
     background-color: white;
     margin: 2%;
 }
+h1 {
+    margin: none;
+}
 
 .input {
     border: 1px solid black;
@@ -49,6 +52,8 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    overflow: scroll;
+     overflow-x: hidden; 
 }
 .cards {
     width: 32%;
@@ -58,6 +63,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+       
+}
+.hidden {
+    display: ;
 }
 .unique-card {
     text-align: center;
